@@ -5,6 +5,7 @@ struct pure_set {
 
   int contains(pure_set x);
   void insert(pure_set x);
+  void remove(pure_set x);
 };
 
 bool pure_set_equals(pure_set a, pure_set b);
