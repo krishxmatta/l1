@@ -72,3 +72,14 @@ pure_set pure_set_union(pure_set a, pure_set b) {
 
   return ret;
 }
+
+pure_set pure_set_difference(pure_set a, pure_set b) {
+  pure_set ret;
+  for(int i = 0; i < a.children.size(); i++) {
+    if(b.contains(a.children[i]) == -1) {
+      ret.insert(a.children[i]);
+    }
+  }
+
+  return ret;
+}
