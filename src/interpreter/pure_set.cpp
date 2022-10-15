@@ -11,6 +11,16 @@ int pure_set::contains(pure_set x) {
   return -1;
 }
 
+void pure_set::insert(pure_set x) {
+  for(int i = 0; i < children.size(); i++) {
+    if(pure_set_equals(children[i], x)) {
+      return;
+    }
+  }
+
+  children.push_back(x);
+}
+
 bool pure_set_equals(pure_set a, pure_set b) {
   if(a.children.size() != b.children.size()) {
     return false;
