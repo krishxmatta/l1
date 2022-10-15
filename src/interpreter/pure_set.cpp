@@ -31,6 +31,13 @@ void pure_set::remove(pure_set x) {
   }
 }
 
+pure_set pure_set::pick() {
+  int idx = arc4random_uniform(children.size());
+  pure_set ret = children[idx];
+  children.erase(children.begin() + idx);
+  return ret;
+}
+
 bool pure_set_equals(pure_set a, pure_set b) {
   if(a.children.size() != b.children.size()) {
     return false;
