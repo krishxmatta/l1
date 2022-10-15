@@ -55,3 +55,20 @@ bool pure_set_equals(pure_set a, pure_set b) {
   
   return true;
 }
+
+pure_set pure_set_union(pure_set a, pure_set b) {
+  pure_set ret;
+  for(int i = 0; i < a.children.size(); i++) {
+    if(ret.contains(a.children[i]) == -1) {
+      ret.insert(a.children[i]);
+    }
+  }
+
+  for(int i = 0; i < b.children.size(); i++) {
+    if(ret.contains(b.children[i]) == -1) {
+      ret.insert(b.children[i]);
+    }
+  }
+
+  return ret;
+}
