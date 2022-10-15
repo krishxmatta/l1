@@ -4,11 +4,11 @@ using namespace std;
 int pure_set::contains(pure_set x) {
   for(int i = 0; i < children.size(); i++) {
     if(pure_set_equals(children[i], x)) {
-      return true;
+      return i;
     }
   }
 
-  return false;
+  return -1;
 }
 
 bool pure_set_equals(pure_set a, pure_set b) {
