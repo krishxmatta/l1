@@ -1,6 +1,16 @@
 #include "pure_set.h"
 using namespace std;
 
+int pure_set::contains(pure_set x) {
+  for(int i = 0; i < children.size(); i++) {
+    if(pure_set_equals(children[i], x)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 bool pure_set_equals(pure_set a, pure_set b) {
   if(a.children.size() != b.children.size()) {
     return false;
