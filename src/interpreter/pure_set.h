@@ -13,3 +13,5 @@ bool pure_set_equals(pure_set a, pure_set b);
 pure_set pure_set_union(pure_set a, pure_set b);
 
 pure_set pure_set_difference(pure_set a, pure_set b);
+
+void pure_set_print(pure_set a);

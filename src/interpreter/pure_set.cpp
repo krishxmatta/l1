@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "pure_set.h"
 using namespace std;
 
@@ -82,4 +83,16 @@ pure_set pure_set_difference(pure_set a, pure_set b) {
   }
 
   return ret;
+}
+
+void pure_set_print(pure_set a) {
+  if(!a.children.size()) {
+    printf("0 ");
+  } else {
+    printf("{ ");
+    for(int i = 0; i < a.children.size(); i++) {
+      pure_set_print(a.children[i]);
+    }
+    printf("} ");
+  }
 }
